@@ -10,6 +10,12 @@ services:
       - data:/data/db
     ports:
       - "${MONGO_INITDB_PORT}:27017"
+  adminer:
+    image: adminer:latest
+    env_file: .env
+    container_name: adminer
+    ports:
+      - 8080:8080
 
 volumes:
   data:
